@@ -27,3 +27,8 @@ jobs:
 
       - name: Run Mutation Testing
         run: ./mvnw test -Ppitest org.pitest:pitest-maven:mutationCoverage
+      - name: Upload Pitest to Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+             name: pitest-mutation-testing
+             path: target/pit-reports/* 
